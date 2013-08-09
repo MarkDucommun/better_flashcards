@@ -31,7 +31,7 @@ post '/submit_guess' do
   @round.guesses.create(response: params[:response], card: @card)
   
   # figure out which redirect to do
-  if next_card = @deck.next_card_after(@card)
+  if next_card = @round.next_card_after(@card)
     redirect "/deck/#{@deck.id}/card/#{next_card.id}"
   else
     session[:round_id] = nil
