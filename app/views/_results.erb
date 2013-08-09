@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Results for <%= @round.deck.name %></h2>
+  <%= @round.percent_correct %>
+  <ul>
+    <% @round.wrong_guesses.each do |guess| %>
+      <li> <%= guess.card.question %></li>
+        <p>You said:</p>
+      <li><%= guess.response %></li>
+        <p>Samuel says:</p>
+      <li><%= guess.card.answer %></li>
+    <% end %>
+  </ul>
+</div>
+
+
