@@ -1,0 +1,14 @@
+<div class="container">
+  <h2>Welcome <%= @user.name %>!</h2>
+  <h3>Most Recent Rounds</h3>
+    <!-- @user.recent_rounds -->
+  <h3>Top Scores</h3>
+    <!-- @user.top_scores -->
+  <h3>Hey try these:</h3>
+    <ul>
+    <% @decks.each do |deck| %>
+    <!-- future feature: display best attempt next to each deck name -->
+      <li><a href"/deck/<%= deck.id %>/card/1"><%= deck.name %></a></li>
+    <% end %>
+    </ul>
+</div>

@@ -1,0 +1,10 @@
+<div class="container">
+  <h2><%= @deck.name %></h2>
+  <div class="card">
+    <h3><%= @card.question %></h3>
+    <form action="/submit_guess" method="post">
+      <input type="text" name="response" placeholder="">
+      <input type="submit" value="Guess Muthafucka!">
+    </form>
+  </div>
+</div>
