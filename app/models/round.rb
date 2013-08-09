@@ -6,12 +6,19 @@ class Round < ActiveRecord::Base
 
   validates_presence_of :user_id, :deck_id
 
-  def get_card_after(card)
+  def next_card_after(card)
     card_index = self.deck.cards.find_index(card)
     self.deck.cards[card_index + 1]
   end
 
   def calculate_score
-    self.score = self.guesses.where(correctness: true).count / self.guesses.all.count
+    puts right_guesses = self.guesses.where(correctness: true).count
+    puts total_guesses = self.guesses.count
+    self.score = ((right_guesses.to_f / total_guesses) * 100).to_i
+    self.save 
+  end
+
+  def wrong_guesses
+    self.guesses.where(correctness: nil)
   end
 end

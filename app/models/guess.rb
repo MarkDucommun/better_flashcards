@@ -8,6 +8,6 @@ class Guess < ActiveRecord::Base
   before_validation :get_correctness
 
   def get_correctness
-    correctness = true if answer == response.downcase
+    self.correctness = true if self.card.answer.downcase == response.downcase
   end
 end
