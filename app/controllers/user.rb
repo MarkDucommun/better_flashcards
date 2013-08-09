@@ -1,4 +1,4 @@
-get '/sign_up' do
+get '/register' do
   @display = "_sign_up"
   erb :index
 end
@@ -14,7 +14,7 @@ post '/sign_in' do
   redirect('/')
 end
 
-post '/sign_up' do
+post '/register' do
   @user = User.new(params[:user])
   @user.save!
   redirect('/')

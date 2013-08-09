@@ -1,19 +1,11 @@
 <div class="container">
-  <h1>Url Shortener</h1>
-
-  <form action="/urls" method="post">
-    <input type="text" name="url" placeholder="paste a url">
-    <input class="button" type="submit" value="Shorten!!?!">
-  </form>
-
-  <form action="/" method="get">
-    <textarea></textarea>
-  </form>
+  <h2>Samuel L. Jackson Presents:</h2>
+  <h1>Guess Muthafucka'</h1>
 
   <div class="content_box">
     <ul>
-      <% @urls.each do |url| %>
-      <li><a href="/<%= url.short_url %>"><%= url.short_url %> - <%= url.long_url %></a><span> <%= url.click_count %> </span></li>
+      <% @decks.each do |deck| %>
+      <li><a href="/deck/<%= deck.id %>/card/<%= deck.cards.first %>"><%= deck.name %></a></li>
       <% end %>
     </ul>
   </div>

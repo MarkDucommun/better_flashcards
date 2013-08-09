@@ -24,15 +24,15 @@ class CssHelper
                  <li><input type='password' name='password' placeholder='Enter password'></li>
                  <li><input class='button' type='submit' value='Sign In'>
                </form>
-               <form action='/sign_up' method='get'>
+               <form action='/register' method='get'>
                  <li><input class='button' type='submit' value='Sign Up'></li>
                </form>"
     else
      
-      auth += "<form action='/sign_out' method='get'>
+      auth += "<li>Hello, #{ user.name }</li><form action='/sign_out' method='get'>
                  <li><input class='button' type='submit' value='Sign Out'></li>
-               </form>
-                 <li>Hello, #{ user.name }</li>"
+               </form>"
+                 
     end
     
     auth += "</ul></div>"
