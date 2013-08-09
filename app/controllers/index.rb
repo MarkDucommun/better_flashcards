@@ -9,6 +9,8 @@ get '/profile/:user_id' do
   @user = User.find(session[:user_id])
   @display = "_profile"
   @deck = Deck.all
+  @top_rounds = @user.top_rounds
+  @recent_rounds = @user.recent_rounds
   erb :index
 end
 
@@ -19,19 +21,21 @@ get '/deck/:deck_id/card/:card_id' do
   erb :index
 end
 
-post '/submit_guess' do
+post '/deck/:deck_id/card/:card_id' do
   @deck = Deck.find(params[:deck_id])
   @card = Card.find(params[:card_id])
   if session[:round_id]
     @round = Round.find(session[:round_id])
   else
     @round = Round.create(deck: @deck, user: User.find(session[:user_id]))
+    session[:round_id] = @round.id
   end
   # have round
   @round.guesses.create(response: params[:response], card: @card)
-  
+  @round.calculate_score
   # figure out which redirect to do
-  if next_card = @round.next_card_after(@card)
+  next_card = @round.next_card_after(@card)
+  unless next_card == nil
     redirect "/deck/#{@deck.id}/card/#{next_card.id}"
   else
     session[:round_id] = nil

@@ -231,3 +231,11 @@ a:visited {
   color: black;
   background-color: grey;
 }
+
+/*==================================*/
+
+.wrong_guess {
+  border:1px solid LightGrey;
+  border-radius: 10px;
+  width:50%;
+}
