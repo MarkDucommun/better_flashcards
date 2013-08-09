@@ -16,7 +16,6 @@ get '/deck/:deck_id/card/:card_id' do
   @deck = Deck.find(params[:deck_id])
   @card = Card.find(params[:card_id])
   @display = "_deck"
-
   erb :index
 end
 
