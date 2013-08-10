@@ -8,9 +8,9 @@ end
 get '/profile/:user_id' do
   @user = User.find(session[:user_id])
   @display = "_profile"
-  @deck = Deck.all
-  @top_rounds = @user.top_rounds
-  @recent_rounds = @user.recent_rounds
+  @decks = @user.get_undone_decks
+  @top_rounds = @user.get_top_rounds
+  @recent_rounds = @user.get_recent_rounds
   erb :index
 end
 
