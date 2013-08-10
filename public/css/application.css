@@ -247,6 +247,13 @@ li {
   line-height: 2em;
 }
 
+.content_box .result {
+  width: 250px;
+  display: inline-block;
+  margin-top: 35px;
+}
+
+
 /*===========================================================================================*/
 /* LINKS */
 

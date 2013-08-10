@@ -8,14 +8,14 @@ class User < ActiveRecord::Base
   eval(UserHelper.add_methods_to_model)
 
   def get_undone_decks
-    Deck.all - self.decks
+    (Deck.all - self.decks).slice(0,5)
   end
 
   def get_top_rounds
-    self.rounds.order('score DESC').limit(10)
+    self.rounds.order('score DESC').limit(5)
   end
 
   def get_recent_rounds
-    self.rounds.order('DESC').limit(5)
+    self.rounds.order('id DESC').limit(5)
   end
 end
