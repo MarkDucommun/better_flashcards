@@ -1,7 +1,12 @@
 get '/' do
   # let user create new short URL, display a list of shortened URLs
   @decks = Deck.all
-  @display = "_front_page"
+  if current_user
+    redirect ("/profile/#{current_user.id}")
+  else
+    @display = "_front_page"
+  end
+
   erb :index
 end
 
