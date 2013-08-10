@@ -3,7 +3,7 @@
   <div class="card">
     <h3><%= @card.question %></h3>
     <form action="/deck/<%= @deck.id %>/card/<%= @card.id %>" method="post">
-      <input type="text" name="response" placeholder="">
+      <input type="text" name="response" placeholder="" autofocus>
       <input class="button" type="submit" value="Guess Muthafucka!">
     </form>
   </div>

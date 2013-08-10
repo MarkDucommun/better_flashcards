@@ -5,19 +5,19 @@
     <ul>
     <% @decks.each do |deck| %>
     <!-- future feature: display best attempt next to each deck name -->
-      <li><a href="/deck/<%= deck.id %>/card/1"><%= deck.name %></a></li>
+      <li><a href="/deck/<%= deck.id %>/card/<%= deck.cards.first.id %>"><%= deck.name %></a></li>
     <% end %>
     </ul>
   <h3>Top Scores</h3>
     <ul>
       <% @top_rounds.each do |round| %>
-        <li><%= round.deck.name %>  -  <%= round.score %></li>
+        <li><a href="/results/<%= round.id %>"><%= round.deck.name %>  -  <%= round.score %></a></li>
       <% end %>
     </ul>
   <h3>Most Recent Rounds</h3>
   <ul>
     <% @recent_rounds.each do |round| %>
-    <li><%= round.deck.name %></li>
+    <li><a href="/results/<%= round.id %>"><%= round.deck.name %></a></li>
     <% end %>
   </ul>
   </div>
