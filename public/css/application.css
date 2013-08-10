@@ -149,6 +149,24 @@ nav {
   margin-right: 1em;
 }
 
+/*==============================================================================================*/
+/* CARD */
+
+.card {
+  margin: 1em;
+  padding: 1em;
+  border: 0.1em solid black;
+  background-image: url('linedpaper.png'); 
+}
+
+.card input {
+  width: 75%;
+}
+
+.card .button {
+  width: auto;
+}
+
 /*===============================================================================================*/
 /* TEXT AND HEADINGS */
 
@@ -247,6 +265,11 @@ li {
   line-height: 2em;
 }
 
+li a:hover{
+  border-radius: 0.3em;
+  padding: 0.3em;
+}
+
 .content_box .result {
   width: 250px;
   display: inline-block;
@@ -272,7 +295,7 @@ a:hover {
 
 a:visited {
   color: black;
-  background-color: grey;
+  background-color: cyan;
 }
 
 /*==================================*/

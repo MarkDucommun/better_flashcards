@@ -1,9 +1,10 @@
 <div class="container" ">
+  <div class="content_box" style="text-align: center">
   <h2>Samuel L. Jackson Presents:</h2>
   <h1>Guess Muthafucka!!?!</h1>
+  <audio src="http://www.soundboard.com/mediafiles/158-39b8d259-1f60-42c6-866c-b24d52ee50a3.mp3" autoplay></audio>
 
 <% if current_user %>
-  <audio src="http://www.soundboard.com/mediafiles/158-39b8d259-1f60-42c6-866c-b24d52ee50a3.mp3" autoplay></audio>
   <div class="content_box">
     <ul>
       <% @decks.each do |deck| %>
@@ -12,6 +13,7 @@
     </ul>
   </div>
 <% else %>
-  <h3>Please sign in to play</h3>
+  <h3>Please sign in or <a href="/register">sign up</a> to play</h3>
 <% end %>
+  </div>
 </div>

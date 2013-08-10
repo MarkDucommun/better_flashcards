@@ -1,10 +1,12 @@
 <div class="container">
-  <h2><%= @deck.name %></h2>
+  <div class="content_box">
+  <h2 style="text-align: center"><%= @deck.name %></h2>
   <div class="card">
     <h3><%= @card.question %></h3>
     <form action="/deck/<%= @deck.id %>/card/<%= @card.id %>" method="post">
       <input type="text" name="response" placeholder="" autofocus>
       <input class="button" type="submit" value="Guess Muthafucka!">
     </form>
+  </div>
   </div>
 </div>
