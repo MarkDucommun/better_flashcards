@@ -1,5 +1,5 @@
 get '/register' do
-  @display = "_sign_up"
+  @display = "_register"
   erb :index
 end
 

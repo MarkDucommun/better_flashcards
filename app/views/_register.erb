@@ -1,8 +1,16 @@
 <div class="container">
-  <form action="/register" method="post">
-    <li><input type="text" name="user[name]" placeholder="Enter name"></li>
-    <li><input type="text" name="user[email]" placeholder="Enter email"></li>
-    <li><input type="password" name="user[password]" placeholder="Enter password"></li>
-    <li><input class="button" type="submit" value="Sign Up">
-  </form>
+  <div class="content_box">
+    <li><h2>Register</h2></li>
+    <audio src="http://www.soundboard.com/mediafiles/158-7bda0cc8-66fa-4d9f-bd60-0a3e309b46a4.mp3" autoplay></audio>
+    
+    <form action="/register" method="post">
+      <li><label for="Name">Name</label></li>
+      <li><input id="Name" type="text" name="user[name]" placeholder="Enter name"></li>
+      <li><label for="Email">Email</label></li>
+      <li><input id="Email" type="text" name="user[email]" placeholder="Enter email"></li>
+      <li><label for="Password">Password</label></li>
+      <li><input id="Password" type="password" name="user[password]" placeholder="Minimum 8 characters"></li>
+      <li><input class="button" type="submit" value="Sign Up">
+    </form>
+  </div>
 </div>
