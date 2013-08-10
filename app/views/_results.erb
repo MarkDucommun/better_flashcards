@@ -3,12 +3,10 @@
   <%= @round.score %>
   <ul>
     <% @round.wrong_guesses.each do |guess| %>
-      <div class="wrong_guess">
-        <li> <%= guess.card.question %></li>
-          <p>You said:</p>
-        <li><%= guess.response %></li>
-          <p>Samuel says:</p>
-        <li><%= guess.card.answer %></li>
+      <div class="content_box">
+        <li><strong><%= guess.card.question %></strong></li>
+        <li><span class="wrong">You said: <%= guess.response %></span></li>
+        <li><span class="right">Samuel says: <%= guess.card.answer %></span></li>
       </div>
     <% end %>
   </ul>
