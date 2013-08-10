@@ -11,7 +11,7 @@ end
 post '/sign_in' do
   @user = User.authenticate(params[:email], params[:password])
   session[:user_id] = @user.id
-  redirect('/')
+  redirect("/profile/#{@user.id}")
 end
 
 post '/register' do

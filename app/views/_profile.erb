@@ -1,22 +1,24 @@
 <div class="container">
+  <div class="content_box">
   <h2>Welcome <%= @user.name %>!</h2>
-  <h3>Most Recent Rounds</h3>
-  <ul>
-    <% @recent_rounds.each do |round| %>
-    <li><%= round.deck.name %></li>
+  <h3>Hey try these:</h3>
+    <ul>
+    <% @decks.each do |deck| %>
+    <!-- future feature: display best attempt next to each deck name -->
+      <li><a href="/deck/<%= deck.id %>/card/1"><%= deck.name %></a></li>
     <% end %>
-  </ul>
+    </ul>
   <h3>Top Scores</h3>
     <ul>
       <% @top_rounds.each do |round| %>
         <li><%= round.deck.name %>  -  <%= round.score %></li>
       <% end %>
     </ul>
-  <h3>Hey try these:</h3>
-    <ul>
-    <% @decks.each do |deck| %>
-    <!-- future feature: display best attempt next to each deck name -->
-      <li><a href"/deck/<%= deck.id %>/card/1"><%= deck.name %></a></li>
+  <h3>Most Recent Rounds</h3>
+  <ul>
+    <% @recent_rounds.each do |round| %>
+    <li><%= round.deck.name %></li>
     <% end %>
-    </ul>
+  </ul>
+  </div>
 </div>

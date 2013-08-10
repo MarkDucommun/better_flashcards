@@ -5,8 +5,8 @@
     <% @round.wrong_guesses.each do |guess| %>
       <div class="content_box">
         <li><strong><%= guess.card.question %></strong></li>
-        <li><span class="wrong">You said: <%= guess.response %></span></li>
-        <li><span class="right">Samuel says: <%= guess.card.answer %></span></li>
+        <li class="result"><span class="wrong">You said: <%= guess.response %></span></li>
+        <li class="result"><span class="right">Samuel says: <%= guess.card.answer %></span></li>
       </div>
     <% end %>
   </ul>
