@@ -9,7 +9,7 @@ class CssHelper
 
               <ul>"
     
-    links.each { |list| nav << "<li><a href='#{list[:link]}'>#{list[:display]}</a></li>" }
+    links.each { |list| nav << "<li class='button' id='side_link'><a href='#{list[:link]}'>#{list[:display]}</a></li>" }
     
     nav += "</ul></div></nav>"
   end

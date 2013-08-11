@@ -319,26 +319,22 @@ a:visited {
 
 @media screen and (min-width: 1600px){
 
-  .decks{
-    float:left;
-  }
-
-  .rounds_scores{
-    float:right;
-    border: 3px solid #CC333F;
-    border-radius: 10px;
-    background-color: #cbc;
-    margin-bottom: 15px; 
-    margin-right: 10px;
-    width: 40%;
-  }
-
-  .content_box{
-    overflow:hidden;
-  }
-  
+.decks{
+  float:left;
 }
 
+.rounds_scores{
+  float:right;
+  border: 3px solid #CC333F;
+  border-radius: 10px;
+  background-color: #cbc;
+  margin-bottom: 15px; 
+  margin-right: 10px;
+  width: 40%;
+}
+.content_box{
+  overflow:hidden;
+}
 #side_link{
   border: 3px solid black;
 }
@@ -346,4 +342,5 @@ a:visited {
   text-align: center;
   font-size: 1.3em;
   font-weight: bold;
+}
 }
