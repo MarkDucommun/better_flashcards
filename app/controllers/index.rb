@@ -19,21 +19,24 @@ get '/profile/:user_id' do
   erb :index
 end
 
-get '/deck/:deck_id/card/:card_id' do
+get '/deck/:deck_id/card/:card_id/correct/:correct/round/:round_id' do
+  params[:round_id] == "first" ? @round = "first" : @round = Round.find(params[:round_id])
   @deck = Deck.find(params[:deck_id])
   @card = Card.find(params[:card_id])
+  @sound = SamSounds.get_sound(params[:correct])
   @display = "_deck"
   erb :index
 end
 
-post '/deck/:deck_id/card/:card_id' do
+post '/deck/:deck_id/card/:card_id/round/:round_id' do
+  puts "motherfucker"
   @deck = Deck.find(params[:deck_id])
   @card = Card.find(params[:card_id])
-  if session[:round_id]
-    @round = Round.find(session[:round_id])
-  else
+  @round = nil
+  if params[:round_id] == "first"
     @round = Round.create(deck: @deck, user: User.find(session[:user_id]))
-    session[:round_id] = @round.id
+  else
+    @round = Round.find(params[:round_id])
   end
   # have round
   if @round.guesses.exists?(:card_id => @card)
@@ -42,10 +45,11 @@ post '/deck/:deck_id/card/:card_id' do
     @round.guesses.create(response: params[:response], card: @card)
   end
   @round.calculate_score
-  # figure out which redirect to do
+  # figure out which redirect to do 
+  puts " This is the card id #{@card.id}, this is params[:card_id] #{params[:card_id]}"
   next_card = @round.next_card_after(@card)
   unless next_card == nil
-    redirect "/deck/#{@deck.id}/card/#{next_card.id}"
+    redirect "/deck/#{@deck.id}/card/#{next_card.id}/correct/#{@round.guesses.last.correctness}/round/#{@round.id}"
   else
     session[:round_id] = nil
     redirect "/results/#{@round.id}"

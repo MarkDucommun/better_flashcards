@@ -6,7 +6,7 @@
       <ul>
       <% @decks.each do |deck| %>
       <!-- future feature: display best attempt next to each deck name -->
-        <li><a href="/deck/<%= deck.id %>/card/<%= deck.cards.first.id %>"><%= deck.name %></a></li>
+       <li><a href="/deck/<%= deck.id %>/card/<%= deck.cards.first.id %>/correct/first/round/first"><%= deck.name %></a></li>
       <% end %>
       </ul>
   </div>
