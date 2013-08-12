@@ -8,7 +8,7 @@
       <div class="content_box">
         <li><strong><%= guess.card.question %></strong></li>
         <li class="result"><span class="wrong">You said: <%= guess.response %></span></li>
-        <li class="result"><span class="right">Samuel says: <%= guess.card.answer %></span></li>
+        <li class="result"><span class="right">Samuel says: <%= guess.card.get_answer %></span></li>
       </div>
     <% end %>
   </ul>

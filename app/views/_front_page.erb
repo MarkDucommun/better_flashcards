@@ -5,13 +5,11 @@
   <audio src="http://www.soundboard.com/mediafiles/158-39b8d259-1f60-42c6-866c-b24d52ee50a3.mp3" autoplay></audio>
 
 <% if current_user %>
-  <div class="content_box">
     <ul>
       <% @decks.each do |deck| %>
-      <li><a href="/deck/<%= deck.id %>/card/<%= deck.cards.first.id %>"><%= deck.name %></a></li>
+      <li><a href="/deck/<%= deck.id %>/card/<%= deck.cards.first.id %>/correct/first/round/first"><%= deck.name %></a></li>
       <% end %>
     </ul>
-  </div>
 <% else %>
   <h3>Please sign in or <a href="/register">sign up</a> to play</h3>
 <% end %>

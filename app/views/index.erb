@@ -11,8 +11,7 @@
   
   </div>
 
-  <% links = [
-              {link: "/",display: "Profile"}] %>
+  <% links = [{link: "/profile/#{session[:user_id]}", display: "Profile"}] %>
 
   <%= CssHelper.nav_bar("Guess Muthafucka!", links) %>
 </div>

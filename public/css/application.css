@@ -100,12 +100,12 @@ nav {
 }
 
 .left-bar .margins {
+  margin: 0.3em;
   margin-left: 1.3em;
 }
 
 .left-bar a {
   border: 2x solid black;
-
 }
 
 .left-bar a:hover {
@@ -122,6 +122,7 @@ nav {
 .site_name a:hover {
   color: black;
   text-decoration: none;
+  background-color: #00A0B0;
 }
 
 
@@ -342,8 +343,12 @@ a:visited {
 #side_link{
   border: 3px solid black;
 }
-#side_link.button a{
+#side_link.button a {
   text-align: center;
   font-size: 1.3em;
   font-weight: bold;
+}
+
+#side_link.button a:hover {
+  background-color: cyan;
 }

@@ -18,5 +18,5 @@ post '/register' do
   @user = User.new(params[:user])
   @user.save!
   session[:user_id] = @user.id
-  redirect('/')
+  redirect("/profile/#{@user.id}")
 end

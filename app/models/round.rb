@@ -19,6 +19,6 @@ class Round < ActiveRecord::Base
   end
 
   def wrong_guesses
-    self.guesses.where(correctness: nil)
+    self.guesses.where(correctness: false)
   end
 end
