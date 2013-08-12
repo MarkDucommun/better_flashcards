@@ -20,7 +20,7 @@ class SamSounds
 
   def self.get_sound(correctness)
     if correctness == "first"
-      return 
+      return FIRST_SOUNDS.sample
     elsif correctness == "true"
       return CORRECT_SOUNDS.sample
     else
