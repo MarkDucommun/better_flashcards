@@ -1,24 +1,30 @@
 <div class="container">
   <div class="content_box">
   <h2>Welcome <%= @user.name %>!</h2>
-  <h3>Hey try these:</h3>
+  <div class="decks">
+    <h3>Hey try these:</h3>
+      <ul>
+      <% @decks.each do |deck| %>
+      <!-- future feature: display best attempt next to each deck name -->
+        <li><a href="/deck/<%= deck.id %>/card/<%= deck.cards.first.id %>"><%= deck.name %></a></li>
+      <% end %>
+      </ul>
+  </div>
+  <div class="rounds_scores">
+    <h3>Top Scores</h3>
+      <ul>
+        <% @top_rounds.each do |round| %>
+          <li><a href="/results/<%= round.id %>"><%= round.deck.name %>  -  <%= round.score %>%</a></li>
+        <% end %>
+      </ul>
+  <!-- </div> -->
+  <!-- <div class="recent_rounds"> -->
+    <h3>Most Recent Rounds</h3>
     <ul>
-    <% @decks.each do |deck| %>
-    <!-- future feature: display best attempt next to each deck name -->
-      <li><a href="/deck/<%= deck.id %>/card/<%= deck.cards.first.id %>"><%= deck.name %></a></li>
-    <% end %>
-    </ul>
-  <h3>Top Scores</h3>
-    <ul>
-      <% @top_rounds.each do |round| %>
-        <li><a href="/results/<%= round.id %>"><%= round.deck.name %>  -  <%= round.score %></a></li>
+      <% @recent_rounds.each do |round| %>
+      <li><a href="/results/<%= round.id %>"><%= round.deck.name %></a></li>
       <% end %>
     </ul>
-  <h3>Most Recent Rounds</h3>
-  <ul>
-    <% @recent_rounds.each do |round| %>
-    <li><a href="/results/<%= round.id %>"><%= round.deck.name %></a></li>
-    <% end %>
-  </ul>
+  </div>
   </div>
 </div>

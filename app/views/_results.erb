@@ -1,6 +1,8 @@
 <div class="container">
-  <h2>Results for <%= @round.deck.name %></h2>
-  <%= @round.score %>
+  <div class="content_box">
+    <h2>Results for <%= @round.deck.name %></h2>
+    <p class='score'><%= @round.score %>%</p>
+  </div>
   <ul>
     <% @round.wrong_guesses.each do |guess| %>
       <div class="content_box">
@@ -11,7 +13,7 @@
     <% end %>
   </ul>
 
-  <a href="/" class="button">My Profile</a>
+  <!-- <a href="/" class="button">My Profile</a> -->
 </div>
 
 

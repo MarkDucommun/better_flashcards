@@ -19,7 +19,7 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 
 require 'erb'
-require 'secureRandom'
+require 'securerandom'
 require 'bcrypt'
 require 'faker'
 
