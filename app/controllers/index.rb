@@ -36,7 +36,11 @@ post '/deck/:deck_id/card/:card_id' do
     session[:round_id] = @round.id
   end
   # have round
-  @round.guesses.create(response: params[:response], card: @card)
+  if @round.guesses.exists?(:card_id => @card)
+    redirect "/deck/#{@deck.id}/card/#{@card.id + 1}"
+  else
+    @round.guesses.create(response: params[:response], card: @card)
+  end
   @round.calculate_score
   # figure out which redirect to do
   next_card = @round.next_card_after(@card)
